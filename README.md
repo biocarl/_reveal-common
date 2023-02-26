@@ -1,13 +1,22 @@
 # _reveal-common - A shared repository for a consistent reveal.js teaching setup 🏫
 ## Getting Started
-- 1. Clone the project in your root project where you want to have slides
-- 2. Put the whole folder `_reveal-common` on `.gitignore`
-- 3. Create your own slides (convention is to put them into `slides/`)
-- 4. Move the `reveal-md.json` file to the parent folder (the root folder of your project). The relative paths are already adapted
-- 5. Start the local reveal-md server (specific configurations will be automatically loaded from `reveal-md.json`)
+To use this trainer configuations for your slides, follow these steps:
+
+- 1. Clone this project into the root directory of your own project where you want to use the slides
+- 2. Add the `_reveal-common` folder to your project's `.gitignore` file to ensure it is not tracked in version control
+- 3. Move the `reveal-md.json` file to your project's root directory so that the local slide server can later pick up the shared configurations. Make sure to exclude it from version control by adding it to your `.gitignore` file.
+The `<your-root>/.gitignore` should look like this:
+```.gitignore
+_reveal-common
+reveal-md.json
+```
+- 4. Create your own slides and save them in the `slides/` folder of your root project (this is just a convention)
+- 5. Start the local reveal-md server by running the following command in your terminal:
 ```bash
 reveal-md . -w
 ```
+This will start a server that displays your slides in your web browser. Any specific configurations for your slides will be automatically loaded from the `reveal-md.json` file that you moved to your project's root directory.
+
 ## Documentation
 ### We should follow certain conventions
 - Put your slides always in a `slide` folder (for each submodule), there you should also keep `img` folder containing images only for that set of slides
@@ -29,7 +38,12 @@ The general idea of `style/style.css` is to have a consistent style and visual l
 
 ## How to refresh the contents and use it?
 1. git pull -r
-2. Move reveal-md.json to root folder
+2. Overwrite reveal-md.json in root folder (if original file changed)
+
+On a unix file system you can also do a symbolic links so you do not need to do step 2 manually
+```bash
+ln -s $(realpath _reveal-common/reveal-md.json) .
+```
 
 ## Why is the repo prepended with a `_`?
 - Up to know reveal-md lists all files in a subdirectory. The underscore in the directory listing will keep all markdown files from the repository contained at the very beginning ;-)
