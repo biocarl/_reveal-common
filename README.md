@@ -2,19 +2,25 @@
 ## Getting Started
 To use this trainer configuations for your slides, follow these steps:
 
-- 1. Clone this project into the root directory of your own project where you want to use the slides
-- 2. Add the `_reveal-common` folder to your project's `.gitignore` file to ensure it is not tracked in version control
-- 3. Move the `reveal-md.json` file to your project's root directory so that the local slide server can later pick up the shared configurations. Make sure to exclude it from version control by adding it to your `.gitignore` file.
+**1. Step** Clone this project into the root directory of your own project where you want to use the slides
+
+**2. Step** Add the `_reveal-common` folder to your project's `.gitignore` file to ensure it is not tracked in version control
+
+**3. Step** Move the `reveal-md.json` file to your project's root directory so that the local slide server can later pick up the shared configurations. Make sure to exclude it from version control by adding it to your `.gitignore` file.
 The `<your-root>/.gitignore` should look like this:
 ```.gitignore
 _reveal-common
 reveal-md.json
 ```
-- 4. Create your own slides and save them in the `slides/` folder of your root project (this is just a convention)
-- 5. Start the local reveal-md server by running the following command in your terminal:
+
+**4. Step** Create your own slides and save them in the `slides/` folder of your root project (this is just a convention)
+
+**5. Step** Start the local reveal-md server by running the following command in your terminal:
+
 ```bash
 reveal-md . -w
 ```
+
 This will start a server that displays your slides in your web browser. Any specific configurations for your slides will be automatically loaded from the `reveal-md.json` file that you moved to your project's root directory.
 
 ## Documentation
