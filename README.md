@@ -9,6 +9,10 @@
 reveal-md . -w
 ```
 ## Documentation
+### We should follow certain conventions
+- Put your slides always in a `slide` folder (for each submodule), there you should also keep `img` folder containing images only for that set of slides
+- Each slide needs to have a `md` extension and must contain the words slide. Example `css-1-slides.md`. Otherwise the files won't be shown in the index view (enforced [here](templates/listing-template.html))
+
 ### Stylesheets explained
 The general idea of `style/style.css` is to have a consistent style and visual language across all slide decks. Some of the classes and ideas are explained here:
 - TODO: flex and columns
@@ -32,17 +36,23 @@ The general idea of `style/style.css` is to have a consistent style and visual l
 
 ## Development - Getting started
 1. The paths in `reveal-md.json` are configured for executing it from the parent folder of root. In order to keep working with the file in root, use the following toggle scripts. Be aware this changes the file in-place.
-- Convert to development version
+
+- *Convert to development version*
 ```bash
-sed 's/_reveal-common\///' reveal-md.json
+sed -i '' 's/_reveal-common\///' reveal-md.json
 ```
-- Convert back to prod version
+- *Convert back to prod version*
 ```bash
-sed 's/"\.\//"_reveal-common\//' reveal-md.json
+sed -i '' 's/"\.\//"\.\/_reveal-common\//' reveal-md.json
 ```
 2. Start the local server in dev version only
 ```bash
 reveal-md . -w
+```
+## Fixes
+- Currently, a listing template does not work when provided via `reveal-md.json`. Workaround is to provide it manually via flag
+```bash
+reveal-md . -w --listing-template _reveal-common/templates/listing-template.html
 ```
 
 ## Ideas/Todos
