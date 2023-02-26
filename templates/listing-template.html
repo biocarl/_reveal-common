@@ -4,14 +4,48 @@
     <meta charset="utf-8" />
     <title>{{pageTitle}}</title>
     <link rel="stylesheet" href="{{{themeUrl}}}" id="theme" />
+    <style>
+        /* For now hide all README.md files */
+        li:has(a[href*="README"]){
+            display: none;
+        }
+
+        /* Once convention is applied apply this */
+        /*
+        li:has(a:not([href*="slide"])){
+            display: none;
+        }
+        */
+
+        h1 {
+            font-size: 4em;
+        }
+
+        ul{
+            list-style-type: none;
+        }
+        ul li {
+            font-size: 3em;
+        }
+
+        a {
+            color: black;
+        }
+
+        body {
+            background-color: #09c;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
+<h1>Welcome to the slide bar!! 🍻</h1>
 <ul>
     {{#files}}
     <li>
         <a href="{{filePath}}" title="{{title}}">
-            {{#title}}{{.}} ({{filePath}}){{/title}}{{^title}}{{filePath}}{{/title}}
+            🧑‍🏫 {{#title}}{{.}} ({{filePath}}){{/title}}{{^title}}{{filePath}}{{/title}}
         </a>
     </li>
     {{/files}}
