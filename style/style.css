@@ -1,0 +1,22 @@
+/* This is the reveal.js default theme we extend with out custom styling */
+@import "black.css";
+
+/* Create multi-column layout container */
+.container{
+    display: flex;
+}
+.col{
+    flex: 1;
+}
+
+/*
+    Brights like background styling for exercises
+    Technical explanations
+        - Targets a slide which is annotated with the exercise and present class
+        - .reveal is the overall parent container which contains all sections (individual slides)
+        - to target a specific slide with this layout use the following in the markdown file
+        <!-- .slide: class="exercise" -->
+*/
+.reveal:has(section.exercise.present) {
+    background-image: linear-gradient(to bottom, #339966, #006666);
+}

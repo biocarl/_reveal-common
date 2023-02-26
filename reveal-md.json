@@ -1,0 +1,13 @@
+{
+  "separator": "\n---slide---",
+  "verticalSeparator": "\n---vert---",
+  "scripts": [
+    "./_reveal-common/plugins/chalkboard/plugin.js",
+    "./_reveal-common/plugins/plugin.js"
+  ],
+  "css": [
+    "./_reveal-common/style/style.css",
+    "./_reveal-common/plugins/chalkboard/style.css"
+  ],
+  "listing-template": "./_reveal-common/templates/listing-template.html"
+}
