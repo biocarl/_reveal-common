@@ -23,6 +23,15 @@ reveal-md . -w
 
 This will start a server that displays your slides in your web browser. Any specific configurations for your slides will be automatically loaded from the `reveal-md.json` file that you moved to your project's root directory.
 
+## Getting Started - Setup script (Unix/Bash)
+Assumes you already cloned this repository into the root of your project
+```bash
+# Ignore config files
+echo "_reveal-common/" >> ../.gitignore
+echo "reveal-md.json" >> ../.gitignore
+ln -s $(realpath reveal-md.json) ../
+```
+
 ## Documentation
 ### We should follow certain conventions
 - Put your slides always in a `slide` folder (for each submodule), there you should also keep `img` folder containing images only for that set of slides
