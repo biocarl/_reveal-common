@@ -10,6 +10,11 @@
             display: none;
         }
 
+        /* Also hide all markdown files contained in this repo */
+        li:has(a[href*="_reveal-common"]){
+            display: none;
+        }
+
         /* Once convention is applied apply this */
         /*
         li:has(a:not([href*="slide"])){
