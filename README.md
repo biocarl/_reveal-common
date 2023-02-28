@@ -83,6 +83,7 @@ reveal-md . -w
 ```bash
 reveal-md . -w --listing-template _reveal-common/templates/listing-template.html
 ```
+- If you want to use a custom listing template you can also put a `index.html` in your root directory. `reveal-md` will automatically detect this.
 
 ## Ideas/Todos
 - Think of a mechanism where you can exclude whole markdown pages (e.g. pre-processing script on print)
