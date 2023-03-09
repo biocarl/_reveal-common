@@ -5,7 +5,7 @@
     <title>{{pageTitle}}</title>
     <link rel="stylesheet" href="{{{themeUrl}}}" id="theme" />
     <style>
-        /* For now hide all README.md files */
+        /* For now hide all README.md files (even if they are in slides folder) */
         li:has(a[href*="README"]){
             display: none;
         }
@@ -16,11 +16,9 @@
         }
 
         /* Once convention is applied apply this */
-        /*
         li:has(a:not([href*="slide"])){
             display: none;
         }
-        */
 
         h1 {
             font-size: 4em;
