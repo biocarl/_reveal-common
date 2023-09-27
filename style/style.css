@@ -3,12 +3,123 @@
 @import "style-polling.css";
 
 /* Create multi-column layout container */
-.container{
+.col-container{
     display: flex;
 }
 .col{
     flex: 1;
 }
+
+/* Center element */
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+/* Create a box with 4 corners*/
+.box {
+    width: 400px;
+    height: 400px;
+    outline: 2px solid white;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent */
+    margin: 0;
+    padding: 0;
+}
+
+.corner {
+    position: absolute;
+    color: white;
+    font-size: 24px;
+    display: inline-block;
+    width: 150px;
+    font-style: italic;
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+    color: #00c7a9;
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+    color: #5d74d9;
+}
+
+.bottom-left {
+    bottom: 0;
+    left: 0;
+    color: palevioletred;
+}
+
+.bottom-right {
+    bottom: 0;
+    right: 0;
+    color: saddlebrown;
+}
+
+
+/* Make content editable */
+.edit {
+    -webkit-user-modify: read-write;
+    -moz-user-modify: read-write;
+    user-modify: read-write;
+}
+
+
+/* Make nested boxes */
+.box-small {
+    width: 200px;
+    white-space: pre-line;
+    font-style: italic;
+    height:200px;
+    font-size: 0.4em;
+    outline: 2px solid white;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.box-info {
+    font-size: 0.5em;
+    color: gray;
+    flex: 0.5;
+    padding: 10px;
+    outline: 2px dotted gray;
+}
+
+/* Having a tilted sratchpad */
+.tilted {
+    transform: rotate(-10deg);
+    display: inline;
+    padding: 20px;
+    /*padding-left: 60px;*/
+}
+
+/* Selects the present slide which has adjacent ul element with tilted class */
+/* Slightly hacky ... */
+.reveal .slides:has(section.present > ul.tilted){
+    padding: 0;
+    /*background-image: linear-gradient(to bottom, #339966, #006666);*/
+    color: red;
+    text-align: left;
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    inset: unset !important;
+    transform: none !important;
+    top: 0;
+}
+
+/* TODO - You do not that the slides hop away */
 
 /*
     Brights like background styling for exercises
